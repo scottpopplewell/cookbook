@@ -1,4 +1,10 @@
 # Scott Popplewell's Favorite Recipes
 
-- [Ice Cream](./ice_cream)
+## Pasta
+- [Pasta](./pasta)
+
+## Dessert
+- [Ice Cream](./dessert/ice_cream)
+
+## Puppy Treats
 - [Dog Treats](./dog_treats)
