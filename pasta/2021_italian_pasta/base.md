@@ -3,8 +3,8 @@
 *Size*: Makes 3-4 people servings
 
 - 3 large eggs
-- 1 cup all purpose flour
-- 1 cup semolina flour
+- 1 cup all purpose flour - 130 g
+- 1 cup semolina flour - 150 g
 - 1/2 teaspoon salt
 - 1/2 tablespoon olive oil
 
