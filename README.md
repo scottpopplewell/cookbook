@@ -1,3 +1,2 @@
-# Scott's Cookbook
+# Hillas Family Cookbook
 
-Simple cookbook using Gatsby Starter Blog
