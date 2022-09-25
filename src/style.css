@@ -167,6 +167,10 @@ p {
   padding: var(--spacing-0);
 }
 
+li {
+  margin-left: 15px;
+}
+
 ul,
 ol {
   margin-left: var(--spacing-0);
