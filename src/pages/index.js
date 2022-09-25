@@ -49,8 +49,6 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      <Bio />
-
       <input
         type="text"
         className="post-search"
