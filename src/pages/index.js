@@ -74,7 +74,7 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.createdAt}</small>
+                  <small>{post.author} — {post.createdAt}</small>
                 </header>
                 <section>
                   <p
@@ -111,6 +111,7 @@ export const pageQuery = graphql`
           }
         }
         description
+        author
         title
         id
         createdAt(formatString: "MMMM DD, YYYY")

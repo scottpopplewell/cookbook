@@ -24,7 +24,7 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header>
           <h1 itemProp="headline">{post.title}</h1>
-          <p>{post.createdAt}</p>
+          <p>From {post.author}'s Kitchen on {post.createdAt}</p>
           <p>{post.size}</p>
         </header>
         <section
@@ -44,10 +44,6 @@ const BlogPostTemplate = ({ data, location }) => {
             )
           })}
         </ul>     
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
       </article>
       <nav className="blog-post-nav">
         <ul
@@ -98,6 +94,7 @@ export const pageQuery = graphql`
       title
       createdAt(formatString: "MMMM DD, YYYY")
       description
+      author
       body {
         childMarkdownRemark {
           html

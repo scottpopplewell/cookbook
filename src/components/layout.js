@@ -29,7 +29,7 @@ const Layout = ({ location, title, children }) => {
         {` `}
         <a href="https://twitter.com/TtocsLLewelppop">a busy dude</a>.
         {` `}
-        See his changes <a href="https://github.com/scottpopplewell/cookbook.scottpopplewell.me/commits/main">here</a>
+        See the source <a href="https://github.com/scottpopplewell/cookbook.hillasfamily.com">here</a>
       </footer>
     </div>
   )
