@@ -89,7 +89,12 @@ const BlogIndex = ({ data, location }) => {
       <div>
         {filteredData.map(post => {
           const title = post.title
-
+          let postSmall;
+          if (post.author) {
+            postSmall = post.author + " - " + post.createdAt;
+          } else {
+            postSmall = post.createdAt;
+          }
           return (
             <div>
               <article
@@ -103,7 +108,7 @@ const BlogIndex = ({ data, location }) => {
                       <span itemProp="headline">{title}</span>
                     </Link>
                   </h2>
-                  <small>{post.author} — {post.createdAt}</small>
+                  <small>{postSmall}</small>
                 </header>
                 <section>
                   <p
