@@ -22,11 +22,14 @@ A lot of the recipes we enjoy are already written down somewhere maybe on a reci
 - This will take you to a new page to add an image to Contentful.
     - Title the image — Not very important what the title is. The title will only be displayed in Contentful and not on the cookbook
     - Add an image — Click on "Open File Selector" and choose the photo you would like to add
+    - Once the image processing has completed, publish the image to Contentful with the big green "Publish" button
+    - Exit back to the recipe by clicking on the arrow in the top left of the screen
+- You will now see the image as an entry in the list of images. Repeat these steps for as many images as you would like to add.
 
-### 5 — Publish!
+### 5 — Publish your recipe!
 
 Click on the big green "Publish Changes" button on the right side of the page
 
-*Easiest when adding images straight from your phone!
+*Easiest when adding a recipe from your phone because you can add images straight from your phone!
 
 ## Complete Mode — Full descriptions, ingredients + steps
