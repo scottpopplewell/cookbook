@@ -1,14 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Hillas Family Cookbook`,
+    title: process.env.METADATA_TITLE,
     author: {
       name: `Scott Popplewell`,
       summary: `who lives and works in Plano trying to build useful things.`,
     },
     description: `A blog shamelessly built using Gatsby's Starter Blog`,
-    siteUrl: `https://cookbook.hillasfamily.me/`,
+    siteUrl: process.env.METADATA_SITE_URL,
+    siteRepo: process.env.METADATA_SITE_REPO,
     social: {
-      twitter: `ttocsllewelppop`,
+      twitter: `sdpopplewell`,
     },
   },
   plugins: [

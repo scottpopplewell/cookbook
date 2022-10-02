@@ -73,6 +73,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type SiteSiteMetadata {
       author: Author
       siteUrl: String
+      siteRepo: String
       social: Social
     }
 
