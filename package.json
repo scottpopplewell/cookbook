@@ -8,6 +8,8 @@
     "url": "https://github.com/scottpopplewell/cookbook.scottpopplewell.me"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.1",
     "gatsby": "^4.0.2",
     "gatsby-plugin-feed": "^4.0.0",
     "gatsby-plugin-gatsby-cloud": "^4.0.0",

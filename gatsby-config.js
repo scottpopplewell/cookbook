@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Hillas Cookbook`,
+    title: `Hillas Family Cookbook`,
     author: {
       name: `Scott Popplewell`,
       summary: `who lives and works in Plano trying to build useful things.`,
@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `kk2euocn6y07`,
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
         enableTags: true,
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
