@@ -1,8 +1,8 @@
 # Adding a New Recipe
 
-The recipes are adding and stored in a Contentful organization. Contentful is a Content Management System (CMS) that supports all different kinds of content from ecommerce sites to personal blogs. We're using it to store all of our recipes + comments. Ask your cookbook admin to [add you to the Contentful organization](./adding_new_users.md).
+The recipes are added and stored in a Contentful organization. Contentful is a Content Management System (CMS) that supports all different kinds of content from ecommerce sites to personal blogs. We're using it to store all of our recipes + comments. Ask your cookbook admin to [add you to the Contentful organization](./adding_new_users.md).
 
-## Easy Mode — Just Pictures!
+## Easy Mode — Just Pictures!*
 
 A lot of the recipes we enjoy are already written down somewhere maybe on a recipe card or in a physical cookbook. If you'd like to quickly add a recipe to your cookbook, you just need:
 
@@ -23,10 +23,10 @@ A lot of the recipes we enjoy are already written down somewhere maybe on a reci
     - Title the image — Not very important what the title is. The title will only be displayed in Contentful and not on the cookbook
     - Add an image — Click on "Open File Selector" and choose the photo you would like to add
 
-*Easiest when adding images straight from your phone!
-
 ### 5 — Publish!
 
 Click on the big green "Publish Changes" button on the right side of the page
+
+*Easiest when adding images straight from your phone!
 
 ## Complete Mode — Full descriptions, ingredients + steps
