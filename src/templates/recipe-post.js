@@ -1,9 +1,10 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import RecipeBody from "../components/recipeBody"
+import RecipeImages from "../components/recipeImages"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.contentfulRecipe
@@ -23,24 +24,28 @@ const BlogPostTemplate = ({ data, location }) => {
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{post.title}</h1>
-          <p>From {post.author}'s Kitchen on {post.createdAt}</p>
-          <p>{post.size}</p>
+          <h2 itemProp="headline">{post.title}</h2>
         </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.body.childMarkdownRemark.html }}
-          itemProp="articleBody"
-        />
-        <h3>History</h3>
+        <section>
+          <div className="row">
+            <dt className="col-sm-3">Author</dt>
+            <dd className="col-sm-9">{post.author}</dd>
+            <dt className="col-sm-3">Date</dt>
+            <dd className="col-sm-9">{post.createdAt}</dd>            
+            <dt className="col-sm-3">Servings</dt>
+            <dd className="col-sm-9">{post.size}</dd>
+          </div>
+        </section>
+        <RecipeImages images={post.images}/>
+        <RecipeBody body={post.body.childMarkdownRemark.html}/>
+        <h4>History</h4>
         <ul>
           {comments.map(comment => {
             const date = comment.date
             const commentBody = comment.body.body
 
             return (
-              <li>
-                <p>{date} - {commentBody}</p>
-              </li>
+              <li>{date} - {commentBody}</li>
             )
           })}
         </ul>     
@@ -95,6 +100,13 @@ export const pageQuery = graphql`
       createdAt(formatString: "MMMM DD, YYYY")
       description
       author
+      images {
+        id
+        file {
+          url
+        }        
+        gatsbyImageData
+      }      
       body {
         childMarkdownRemark {
           html
