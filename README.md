@@ -2,8 +2,8 @@
 
 This Gatsby static site template provides a fun family cookbook that is taggable, searchable and has comments!
 
+- [Current Cookbooks](#current-cookbooks)
 - User Guide
-    - [Current Cookbooks](#current-cookbooks)
     - [Adding New Recipes](./documentation/new_recipes.md)
     - [Adding New Recipe Managers](./documentation/adding_new_users.md)
 - Technical Details

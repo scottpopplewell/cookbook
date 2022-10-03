@@ -33,3 +33,41 @@ Click on the big green "Publish Changes" button on the right side of the page
 *Easiest when adding a recipe from your phone because you can add images straight from your phone!
 
 ## Complete Mode — Full descriptions, ingredients + steps
+
+In addition to filling out simple recipes with just a few pieces of info + images, you can also take full controll and list out the full recipe with ingredients, steps and the story. You can also tag the recipe to allow you to quickly search for similar recipes (e.g. "Breakfast", "Dessert", "Under 60 minutes").
+
+### Recipe Writing
+
+If you want to write out the whole recipe with ingredients and steps, fill out the "body" field in Contentful. This type of field in Contentful allows for whats called [markdown](https://www.contentful.com/blog/2020/05/25/beginners-guide-to-contentful-text-types-markdown-richtext/).
+
+Typically, our recipe bodies are split into 3 sections.
+
+- Story — Write out how you came to find this recipe. Typically...I skip this section, but many recipe sites facilitate this section.
+- Ingredients — Simple list of ingredients with proportions
+- Process — Write out how you take the recipe from ingredients to masterpiece
+
+Pretty...simple, huh?
+
+You can write out these sections however you like. The markdown will get converted to get shown on your online cookbook appropriately with the exception of images. I would avoid putting images in the recipe body for now. Use the images section for images.
+
+### Tags
+
+You can tag recipes to group together similar favorites. Examples include "Dessert" or "Breakfast." You can also do...whatever you like! Time based tagging is an option: "Under 30 minutes", "Under 60 minutes."
+
+#### Go to the tabs section of your recipe
+
+When viewing a recipe in Contentful, click on the "Tags" tab of the recipe entry editor.
+
+![Recipe Editor Tabs](./images/recipe_editor_tabs.png)
+
+#### Start typing in the tags search to find or create a new tag
+
+![Searching for a tag](./images/tags_search.png)
+
+#### Create the tag
+
+Be sure to check the "Public" tag so that the site will be able to query this tag and show it on your cookbook.
+
+#### Publish the changes to the recipe
+
+Click on the big green button to publish these tag changes for your recipe. This will kick off the process to rebuild the cookbook. In a few minutes, you'll see the tag on your online cookbook.
