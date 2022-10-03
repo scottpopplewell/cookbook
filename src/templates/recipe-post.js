@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import RecipeBody from "../components/recipeBody"
 import RecipeImages from "../components/recipeImages"
+import RecipeIngredients from "../components/recipeIngredients"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.contentfulRecipe
@@ -37,6 +38,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </div>
         </section>
         <RecipeImages images={post.images}/>
+        <RecipeIngredients ingredients={post.ingredients} />
         <RecipeBody body={post.body.childMarkdownRemark.html}/>
         <h4>History</h4>
         <ul>
@@ -108,6 +110,11 @@ export const pageQuery = graphql`
         gatsbyImageData
       }      
       body {
+        childMarkdownRemark {
+          html
+        }
+      }
+      ingredients {
         childMarkdownRemark {
           html
         }

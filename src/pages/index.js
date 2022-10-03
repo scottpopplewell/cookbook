@@ -18,7 +18,8 @@ const BlogIndex = ({ data, location }) => {
   const updateFilteredPosts = () => {
     const posts = data.allContentfulRecipe.nodes || []
     const filteredPosts = posts.filter(post => {
-      const { description, title } = post
+      const { description, title, ingredients } = post
+      const ingredientsRaw = ingredients == null ? null : ingredients.ingredients;
       const tags = post.metadata.tags.map(function(tag) {
         return tag['name'];
       });
@@ -26,6 +27,7 @@ const BlogIndex = ({ data, location }) => {
       return (
         hasAllSelectedTags &&
         ((description && description.toLowerCase().includes(query.toLowerCase())) ||
+        (ingredientsRaw && ingredientsRaw.toLowerCase().includes(query.toLowerCase())) ||
         title.toLowerCase().includes(query.toLowerCase()) ||
         (tags &&
            tags
@@ -147,6 +149,9 @@ export const pageQuery = graphql`
         description
         author
         title
+        ingredients {
+          ingredients
+        }
         id
         createdAt(formatString: "MMMM DD, YYYY")
       }
