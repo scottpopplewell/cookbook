@@ -34,21 +34,20 @@ Click on the big green "Publish Changes" button on the right side of the page
 
 ## Complete Mode — Full descriptions, ingredients + steps
 
-In addition to filling out simple recipes with just a few pieces of info + images, you can also take full controll and list out the full recipe with ingredients, steps and the story. You can also tag the recipe to allow you to quickly search for similar recipes (e.g. "Breakfast", "Dessert", "Under 60 minutes").
+In addition to filling out simple recipes with just a few pieces of info + images, you can also take full control and list out the full recipe with ingredients, steps and the story. You can also tag the recipe to allow you to quickly search for similar recipes (e.g. "Breakfast", "Dessert", "Under 60 minutes").
+
+Adding tags and ingredients allows for better searching!! You can search by ingredients (e.g. "Chicken") or by tags (e.g. "Dessert").
 
 ### Recipe Writing
 
-If you want to write out the whole recipe with ingredients and steps, fill out the "body" field in Contentful. This type of field in Contentful allows for whats called [markdown](https://www.contentful.com/blog/2020/05/25/beginners-guide-to-contentful-text-types-markdown-richtext/).
+If you want to write out the whole recipe with ingredients and steps, fill out the "ingredients" and "instructions" fields in Contentful. These fields in Contentful allow for whats called [markdown](https://www.contentful.com/blog/2020/05/25/beginners-guide-to-contentful-text-types-markdown-richtext/).
 
-Typically, our recipe bodies are split into 3 sections.
-
-- Story — Write out how you came to find this recipe. Typically...I skip this section, but many recipe sites facilitate this section.
 - Ingredients — Simple list of ingredients with proportions
-- Process — Write out how you take the recipe from ingredients to masterpiece
+- Instructions — Write out how you take the recipe from ingredients to masterpiece
 
 Pretty...simple, huh?
 
-You can write out these sections however you like. The markdown will get converted to get shown on your online cookbook appropriately with the exception of images. I would avoid putting images in the recipe body for now. Use the images section for images.
+You can write out these sections however you like. The markdown will get converted to get shown on your online cookbook appropriately with the exception of images. I would avoid putting images in the recipe for now. Use the images section for images.
 
 ### Tags
 
