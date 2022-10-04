@@ -17,6 +17,10 @@ const BlogIndex = ({ data, location }) => {
 
   const updateFilteredPosts = () => {
     const posts = data.allContentfulRecipe.nodes || []
+    
+    if (query === undefined || query === "") {
+      setFilteredData(posts);  
+    }
     const filteredPosts = posts.filter(post => {
       const { description, title, ingredients } = post
       const ingredientsRaw = ingredients == null ? null : ingredients.ingredients;
