@@ -39,7 +39,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </section>
         <RecipeImages images={post.images}/>
         <RecipeIngredients ingredients={post.ingredients} />
-        <RecipeBody body={post.body.childMarkdownRemark.html}/>
+        <RecipeBody body={post.body?.childMarkdownRemark?.html}/>
         <h4>History</h4>
         <ul>
           {comments.map(comment => {
