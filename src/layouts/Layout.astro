@@ -4,7 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
-const siteTitle = "Hillas Cookbook";
+const siteTitle = import.meta.env.PUBLIC_SITE_TITLE || "Cookbook";
 ---
 
 <!doctype html>
