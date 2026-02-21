@@ -1,0 +1,116 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import RecipeImages from "../../components/RecipeImages.astro";
+import RecipeIngredients from "../../components/RecipeIngredients.astro";
+import RecipeBody from "../../components/RecipeBody.astro";
+import { getAllRecipes, getRecipeById, type Recipe } from "../../lib/contentful";
+
+export async function getStaticPaths() {
+  const recipes = await getAllRecipes();
+  return recipes.map((recipe) => ({
+    params: { id: recipe.id },
+  }));
+}
+
+const { id } = Astro.params;
+const recipe = await getRecipeById(id as string);
+
+if (!recipe) {
+  return Astro.redirect("/404");
+}
+
+// Get prev/next for navigation
+const allRecipes = await getAllRecipes();
+const currentIndex = allRecipes.findIndex((r) => r.id === id);
+const previous = currentIndex > 0 ? allRecipes[currentIndex - 1] : null;
+const next = currentIndex < allRecipes.length - 1 ? allRecipes[currentIndex + 1] : null;
+---
+
+<Layout title={recipe.title}>
+  <article class="blog-post">
+    <header>
+      <h2>{recipe.title}</h2>
+    </header>
+    
+    <section>
+      <div class="recipe-meta">
+        <dl>
+          <dt>Author</dt>
+          <dd>{recipe.author}</dd>
+          <dt>Date</dt>
+          <dd>{recipe.createdAt}</dd>
+          <dt>Servings</dt>
+          <dd>{recipe.size}</dd>
+        </dl>
+      </div>
+    </section>
+
+    <RecipeImages images={recipe.images} />
+    <RecipeIngredients ingredients={recipe.ingredients} />
+    <RecipeBody body={recipe.body} />
+
+    {recipe.comments.length > 0 && (
+      <section class="recipe-history">
+        <h4>History</h4>
+        <ul>
+          {recipe.comments.map((comment) => (
+            <li>{comment.date} - {comment.body}</li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </article>
+
+  <nav class="blog-post-nav">
+    <ul>
+      <li>
+        {previous && (
+          <a href={`/recipes/${previous.id}`} rel="prev">
+            ← {previous.title}
+          </a>
+        )}
+      </li>
+      <li>
+        {next && (
+          <a href={`/recipes/${next.id}`} rel="next">
+            {next.title} →
+          </a>
+        )}
+      </li>
+    </ul>
+  </nav>
+</Layout>
+
+<style>
+  .recipe-meta dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.25rem 1rem;
+    margin: 0;
+  }
+
+  .recipe-meta dt {
+    font-weight: bold;
+  }
+
+  .recipe-meta dd {
+    margin: 0;
+  }
+
+  .recipe-history ul {
+    padding-left: 1.5rem;
+  }
+
+  .recipe-history li {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-post-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0 0;
+  }
+</style>

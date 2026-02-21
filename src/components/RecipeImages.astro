@@ -1,0 +1,26 @@
+---
+interface Props {
+  images: { id: string; url: string }[];
+}
+
+const { images } = Astro.props;
+---
+
+{images && images.length > 0 && (
+  <div class="recipe-images">
+    {images.map((image) => (
+      <a target="_blank" href={image.url}>
+        <img class="recipe-image" src={image.url} alt="Recipe Photo" />
+      </a>
+    ))}
+  </div>
+)}
+
+<style>
+  .recipe-images {
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+</style>

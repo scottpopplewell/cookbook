@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getAllRecipes } from "../lib/contentful";
+
+const recipes = await getAllRecipes();
+---
+
+<Layout title="All Recipes">
+  <input
+    type="text"
+    class="post-search"
+    id="recipe-search"
+    aria-label="Search"
+    placeholder="Type to filter recipes..."
+  />
+
+  <ol id="recipe-list" style="list-style: none; padding: 0;">
+    {recipes.map((recipe) => {
+      const postSmall = recipe.author
+        ? `${recipe.author} - ${recipe.createdAt}`
+        : recipe.createdAt;
+
+      return (
+        <li class="post-list-item" data-title={recipe.title.toLowerCase()} data-description={recipe.description.toLowerCase()} data-ingredients={recipe.ingredients.toLowerCase()}>
+          <article itemscope itemtype="http://schema.org/Article">
+            <header>
+              <h2>
+                <a href={`/recipes/${recipe.id}`} itemprop="url">
+                  <span itemprop="headline">{recipe.title}</span>
+                </a>
+              </h2>
+              <small>{postSmall}</small>
+            </header>
+            <section>
+              <p itemprop="description">{recipe.description}</p>
+            </section>
+          </article>
+        </li>
+      );
+    })}
+  </ol>
+</Layout>
+
+<script>
+  const searchInput = document.getElementById("recipe-search") as HTMLInputElement;
+  const recipeList = document.getElementById("recipe-list");
+  const recipeItems = recipeList?.querySelectorAll(".post-list-item");
+
+  searchInput?.addEventListener("input", (e) => {
+    const query = (e.target as HTMLInputElement).value.toLowerCase();
+
+    recipeItems?.forEach((item) => {
+      const title = item.getAttribute("data-title") || "";
+      const description = item.getAttribute("data-description") || "";
+      const ingredients = item.getAttribute("data-ingredients") || "";
+
+      const matches =
+        title.includes(query) ||
+        description.includes(query) ||
+        ingredients.includes(query);
+
+      (item as HTMLElement).style.display = matches ? "" : "none";
+    });
+  });
+</script>

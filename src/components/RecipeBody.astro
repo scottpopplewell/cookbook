@@ -1,0 +1,32 @@
+---
+import { marked } from "marked";
+
+interface Props {
+  body: string;
+}
+
+const { body } = Astro.props;
+const html = body ? await marked(body) : "";
+---
+
+{body && (
+  <section class="recipe-body" set:html={html} />
+)}
+
+<style>
+  .recipe-body {
+    margin: 1.5rem 0;
+  }
+
+  .recipe-body :global(h2) {
+    font-size: 1.4rem;
+  }
+
+  .recipe-body :global(ol) {
+    padding-left: 1.5rem;
+  }
+
+  .recipe-body :global(li) {
+    margin-bottom: 1rem;
+  }
+</style>

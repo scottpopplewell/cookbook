@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const siteTitle = "Hillas Cookbook";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | {siteTitle}</title>
+  </head>
+  <body>
+    <div class="global-wrapper">
+      <header class="global-header">
+        <h1 class="main-heading">
+          <a href="/">{siteTitle}</a>
+        </h1>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer>
+        © {new Date().getFullYear()}, Built by
+        <a href="https://twitter.com/sdpopplewell">a busy dude</a>.
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/normalize.css";
+  @import "../styles/style.css";
+</style>
